@@ -28,8 +28,10 @@ if __name__ == "__main__":
 
     # Execute the SQL query to select states with names matching the user
     # input, ordered by id in ascending order
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cursor.execute(query, (state_name_searched,))
+    query = """ SELECT * FROM states
+          WHERE name LIKE BINARY '{}'
+          ORDER BY id ASC """.format(state_name_searched)
+    cursor.execute(query)
 
     # Fetch all the rows from the executed query
     rows = cursor.fetchall()
