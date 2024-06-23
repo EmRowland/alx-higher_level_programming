@@ -33,10 +33,9 @@ if __name__ == "__main__":
         states_to_delete = session.query(
             State).filter(State.name.like('%a%')).all()
 
-        if states_to_delete:
-            for state in states_to_delete:
-                session.delete(state)
-            session.commit()
-            print("Deleted {} states.".format(len(states_to_delete)))
-        else:
-            print("No states found with names containing 'a'.")
+        for state in states_to_delete:
+            session.delete(state)
+
+        session.commit()
+
+        session.close()
