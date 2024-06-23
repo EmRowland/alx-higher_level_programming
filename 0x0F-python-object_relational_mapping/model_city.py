@@ -1,8 +1,14 @@
+#!/usr/bin/python3
+
 from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base, State
 
 
 class City(Base):
+    """
+    Extending the class name base
+    from model state
+    """
     __tablename__ = 'cities'
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
