@@ -18,7 +18,7 @@ if __name__ == "__main__":
     - Executes an SQL query to select all states.
     - Fetches and prints the query results.
     - Closes the cursor and database connection.
-    """
+    """ 
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
