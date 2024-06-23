@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-
+"""
+Defines the city model
+"""
 from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base, State
 
 
 class City(Base):
     """
-    Extending the class name base
-    from model state
+    Defines the link to
+    the city model
     """
     __tablename__ = 'cities'
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
