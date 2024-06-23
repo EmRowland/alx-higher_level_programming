@@ -6,10 +6,8 @@ This script connects to a MySQL database using credentials provided via command-
 
 
 import sys
-
-
-importing mys
 import MySQLdb
+
 
 
 if __name__ == "__main__":
@@ -21,6 +19,7 @@ if __name__ == "__main__":
     - Fetches and prints the query results.
     - Closes the cursor and database connection.
     """
+
     
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
@@ -32,8 +31,7 @@ if __name__ == "__main__":
         port=3306,
         user=mysql_username,
         passwd=mysql_password,
-        db=database_name,
-        charset="utf8"
+        db=database_name
     )
 
     # Create a cursor object
