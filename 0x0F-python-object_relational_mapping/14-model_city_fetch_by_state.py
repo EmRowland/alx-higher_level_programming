@@ -28,12 +28,7 @@ if __name__ == "__main__":
     # Context manager for session handling
     with Session() as session:
         # Query for all City objects, joining with State to get state names
-        cities = session.query(State, City) \
-            .filter(State.id == City.state_id)
-
-        for city in cities:
-            print(
-                "{}: ({}) {}".format(
-                    city.state.name,
-                    city.id,
-                    city.name))
+        cities = session.query(State, City).join(City).order_by(City.id).all()
+        for state, city in cities:
+            print('{}: ({}) {}'.format(state.name, city.id, city.name))
+        session.close()
