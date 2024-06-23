@@ -8,6 +8,9 @@ import sys
 import MySQLdb
 
 
+"""
+Initiating the class to get the creds 
+"""
 if __name__ == "__main__":
     """
     Get MySQL credentials from command line argument
