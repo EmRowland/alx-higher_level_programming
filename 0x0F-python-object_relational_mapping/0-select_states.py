@@ -7,20 +7,11 @@ records from the 'states' table, ordered by the 'id'
 column in ascending order.
 """
 
-
 import sys
 import MySQLdb
 
-
 if __name__ == "__main__":
-    """
-    Main execution block:
-    - Retrieves MySQL credentials from command line arguments.
-    - Connects to the MySQL database.
-    - Executes an SQL query to select all states.
-    - Fetches and prints the query results.
-    - Closes the cursor and database connection.
-    """
+    # Get MySQL credentials from command line arguments
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
