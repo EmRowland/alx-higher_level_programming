@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Lists all states from the database hbtn_0e_0_usa where name matches the argument,
+Lists all states from the database
+hbtn_0e_0_usa where name matches the argument,
 safe from SQL injection.
 """
 
@@ -26,7 +27,8 @@ if __name__ == "__main__":
     # Create a cursor object
     cursor = db.cursor()
 
-    # Execute the SQL query to select states with names matching the user input, ordered by id in ascending order
+    # Execute the SQL query to select states with names matching the user
+    # input, ordered by id in ascending order
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
     cursor.execute(query, (state_name_searched,))
 
@@ -40,4 +42,3 @@ if __name__ == "__main__":
     # Close the cursor and the database connection
     cursor.close()
     db.close()
-

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Prints the State object's id with the name passed as argument from the database hbtn_0e_6_usa.
+Prints the State object's id with the name
+passed as argument from the database hbtn_0e_6_usa.
 """
 import sys
 from sqlalchemy import create_engine
@@ -21,5 +22,3 @@ if __name__ == "__main__":
         print("Not found")
 
     session.close()
-
-

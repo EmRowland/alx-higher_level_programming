@@ -24,7 +24,8 @@ if __name__ == "__main__":
     # Create a cursor object
     cursor = db.cursor()
 
-    # Execute the SQL query to select states with names starting with 'N', ordered by id in ascending order
+    # Execute the SQL query to select states with names starting with 'N',
+    # ordered by id in ascending order
     cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
     # Fetch all the rows from the executed query
@@ -37,4 +38,3 @@ if __name__ == "__main__":
     # Close the cursor and the database connection
     cursor.close()
     db.close()
-

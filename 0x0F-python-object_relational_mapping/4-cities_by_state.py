@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Lists all cities from the database hbtn_0e_4_usa in ascending order by cities.id.
+Lists all cities from the database
+hbtn_0e_4_usa in ascending order by cities.id.
 """
 
 import sys
@@ -24,7 +25,8 @@ if __name__ == "__main__":
     # Create a cursor object
     cursor = db.cursor()
 
-    # Execute the SQL query to select all cities, ordered by id in ascending order
+    # Execute the SQL query to select all cities, ordered by id in ascending
+    # order
     query = """
     SELECT cities.id, cities.name, states.name
     FROM cities
@@ -43,4 +45,3 @@ if __name__ == "__main__":
     # Close the cursor and the database connection
     cursor.close()
     db.close()
-

@@ -17,8 +17,12 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     # Create the engine
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(username, password, database),
-                           pool_pre_ping=True)
+    engine = create_engine(
+        'mysql+mysqldb://{}:{}@localhost/{}'.format(
+            username,
+            password,
+            database),
+        pool_pre_ping=True)
 
     # Create session
     Session = sessionmaker(bind=engine)
@@ -26,8 +30,9 @@ if __name__ == "__main__":
     # Context manager for session handling
     with Session() as session:
         # Query for states containing 'a' in their name
-        states_to_delete = session.query(State).filter(State.name.like('%a%')).all()
-        
+        states_to_delete = session.query(
+            State).filter(State.name.like('%a%')).all()
+
         if states_to_delete:
             for state in states_to_delete:
                 session.delete(state)
@@ -35,6 +40,3 @@ if __name__ == "__main__":
             print("Deleted {} states.".format(len(states_to_delete)))
         else:
             print("No states found with names containing 'a'.")
-
-
-

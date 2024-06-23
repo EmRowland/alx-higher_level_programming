@@ -18,8 +18,12 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     # Create the engine
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(username, password, database),
-                           pool_pre_ping=True)
+    engine = create_engine(
+        'mysql+mysqldb://{}:{}@localhost/{}'.format(
+            username,
+            password,
+            database),
+        pool_pre_ping=True)
 
     # Create session
     Session = sessionmaker(bind=engine)
@@ -31,9 +35,10 @@ if __name__ == "__main__":
 
         if cities:
             for city in cities:
-                print("{}: ({}) {}".format(city.state.name, city.id, city.name))
+                print(
+                    "{}: ({}) {}".format(
+                        city.state.name,
+                        city.id,
+                        city.name))
         else:
             print("No cities found.")
-
-
-

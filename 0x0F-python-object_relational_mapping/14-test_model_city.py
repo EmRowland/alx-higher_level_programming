@@ -6,6 +6,7 @@ from model_state import Base
 not executable please leave out  /usr.......python3
 """
 
+
 class City(Base):
 
     """
@@ -15,5 +16,3 @@ class City(Base):
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
-
-

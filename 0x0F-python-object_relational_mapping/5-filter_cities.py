@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 """
-Lists all cities of a given state from the database hbtn_0e_4_usa, safe from SQL injection.
+Lists all cities of a given state from
+ the database hbtn_0e_4_usa, safe from SQL injection.
 """
 
 import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    # Get MySQL credentials, database name, and state name from command line arguments
+    # Get MySQL credentials, database name, and state name from command line
+    # arguments
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
@@ -25,7 +27,8 @@ if __name__ == "__main__":
     # Create a cursor object
     cursor = db.cursor()
 
-    # Execute the SQL query to select all cities of the given state, ordered by id in ascending order
+    # Execute the SQL query to select all cities of the given state, ordered
+    # by id in ascending order
     query = """
     SELECT cities.name
     FROM cities
@@ -44,4 +47,3 @@ if __name__ == "__main__":
     # Close the cursor and the database connection
     cursor.close()
     db.close()
-

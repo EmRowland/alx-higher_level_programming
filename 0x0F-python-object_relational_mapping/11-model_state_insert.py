@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Adds the State object "Louisiana" to the database hbtn_0e_6_usa and prints its id after creation.
+Adds the State object "Louisiana" to the database
+hbtn_0e_6_usa and prints its id after creation.
 """
 import sys
 from sqlalchemy import create_engine
@@ -20,5 +21,3 @@ if __name__ == "__main__":
     print(new_state.id)
 
     session.close()
-
-

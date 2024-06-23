@@ -17,8 +17,12 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     # Create the engine
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(username, password, database),
-                           pool_pre_ping=True)
+    engine = create_engine(
+        'mysql+mysqldb://{}:{}@localhost/{}'.format(
+            username,
+            password,
+            database),
+        pool_pre_ping=True)
 
     # Create session
     Session = sessionmaker(bind=engine)
@@ -27,7 +31,7 @@ if __name__ == "__main__":
     with Session() as session:
         # Query for the state with id = 2
         state_to_update = session.query(State).filter_by(id=2).first()
-        
+
         if state_to_update:
             # Update the name attribute
             state_to_update.name = "New Mexico"
@@ -35,6 +39,3 @@ if __name__ == "__main__":
             print("State name updated successfully!")
         else:
             print("State with id = 2 not found.")
-
-
-
